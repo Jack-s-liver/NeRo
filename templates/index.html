@@ -1,0 +1,9 @@
+{% extends 'my-base.html'%}
+
+{% block title %}
+Привет
+{% endblock %}
+
+{% block window %}
+<p class="cat-class"><img src="{{ url_for('static', filename='pictures/cat.png')}}" alt=""></p>
+{% endblock %}

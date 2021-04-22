@@ -1,0 +1,90 @@
+{% extends 'my-base.html'%}
+
+{% block title %}
+обучить
+{% endblock %}
+{% block css_list %}
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/learn.css')}}">
+{% endblock %}
+
+{% block window %}
+<div class="cont-2" id="learning">
+<div class="learn_tip"><p>Выберите диапазон данных и настройте параметры обучения</p></div>
+<div class="date_time">
+<p>Начало диапазона: </p>
+<input type="date" name="calendar"
+    max="2030-01-01" min="1880-01-01"> <br><br>
+<input type="time" name="selected_time" ><br>
+<p>Конец диапазона: </p>
+<input type="date" name="calendar"
+    max="2030-01-01" min="1880-01-01"> <br><br>
+<input type="time" name="selected_time" ><br>
+<button class="right-button" onclick="check()" style="margin: 1em"> Построить спектрограмму </button>
+</div>
+<div class="options"><p>параметры обучения</p>
+<select style="padding:3px;" disabled>
+  <option>Нейросеть по умолчанию</option>
+  <option>Своя нейросеть (toDo)</option>
+</select>
+  <p>Размер спектрограммы</p>
+<p> разрешение по частоте </p>
+<input type="number" id="wid" name="wid"
+       min="1" max="2000" disabled>
+
+<p> количество отсчетов по времени </p>
+<input type="number" id="hei" name="hei"
+       min="1" max="2000" disabled>
+<select style="padding:3px;" disabled>
+  <option>--Конфигурация осей--</option>
+  <option>По горизонтали - время</option>
+  <option>По горизонтали - частота</option>
+</select>
+<select style="padding:3px;" disabled>
+  <option>--Заполнение пропусков в данных--</option>
+  <option>Склеивание</option>
+  <option>Заполнение последним спектром</option>
+  <option>Заполнение нулями</option>
+</select>
+</div>
+<div class="output"><p>место для спектрограммы</p>
+<p class="cat-class"><img src="{{ url_for('static', filename='pictures/cat.png')}}" alt=""></p></div>
+</div>
+
+<div class="res-1">разделительная полоса</div>
+
+<div class="cont-2" id="searching">
+<div class="learn_tip"><p>Выберите диапазон данных и настройте параметры</p></div>
+<div class="date_time">
+<p>Начало диапазона: </p>
+<input type="date" name="calendar"
+    max="2030-01-01" min="1880-01-01"> <br><br>
+<input type="time" name="selected_time" ><br>
+<p>Конец диапазона: </p>
+<input type="date" name="calendar"
+    max="2030-01-01" min="1880-01-01"> <br><br>
+<input type="time" name="selected_time" ><br>
+<button class="right-button" onclick="check()" style="margin: 1em"> Построить спектрограмму </button>
+</div>
+<div class="options"><p>Параметры </p>
+<select style="padding:3px;" disabled>
+  <option>Нейросеть по умолчанию</option>
+  <option>Своя нейросеть (toDo)</option>
+</select>
+<p> параметр 1
+<input type="number" id="wid1" name="wid"
+       min="1" max="2000" disabled> </p>
+
+<p> параметр 2
+<input type="number" id="hei1" name="hei"
+       min="1" max="2000" disabled> </p>
+<select style="padding:3px;" disabled>
+  <option>--Конфигурация осей--</option>
+  <option>По горизонтали - время</option>
+  <option>По горизонтали - частота</option>
+</select>
+
+	   </div>
+<div class="output"><p>место для спектрограммы</p></div>
+
+</div>
+{% endblock %}

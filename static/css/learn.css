@@ -1,0 +1,33 @@
+.cont-2 {
+	display: grid;
+	grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "learn_tip learn_tip"
+	"date_time output"
+    "options output";
+	grid-gap: 10px;
+}
+.learn_tip {
+	grid-area: learn_tip;
+}
+.date_time {
+	grid-area: date_time;
+	margin: 10px;
+	padding: 10px;
+	border: groove;
+}
+
+.options {
+	grid-area: options;
+	margin: 10px;
+	padding: 10px;
+	border: groove;
+}
+.output {
+	grid-area: output;
+	border: groove;
+	padding: 10px;
+}
+.right-button {
+}

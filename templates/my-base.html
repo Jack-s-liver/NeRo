@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    {% block css_list %}{% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+   body{
+    background-color: #edf2f9;
+   }
+   html {
+  scroll-behavior: smooth;
+}
+   </style>
+</head>
+<body>
+
+<div class="cont-1">
+ <div class="top">
+ <p>приветики</p>
+ </div>
+
+<ul class="nav">
+            <li><a href="#start">NeRo</a></li>
+            <li><a href="#learning">Обучить</a></li>
+            <li><a href="#searching">Найти аномалии</a></li>
+            <li><a href="#export">Экспорт</a></li>
+        </ul>
+<div class="window">
+ {% block window %}{% endblock %}
+</div>
+<div class="footer">
+<p></p></div>
+</div>
+
+</body>
+</html>
